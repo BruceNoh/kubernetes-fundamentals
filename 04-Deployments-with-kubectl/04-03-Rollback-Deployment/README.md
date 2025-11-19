@@ -66,8 +66,7 @@ http://<worker-node-public-ip>:<Node-Port>
 kubectl rollout history deployment/<Deployment-Name>
 kubectl rollout history deployment/my-first-deployment 
 ```
-### Rollback to specific revision
-### 특정 revision 복원원
+### Rollback to specific revision: 특정 revision 복원
 ```
 # Rollback Deployment to Specific Revision
 kubectl rollout undo deployment/my-first-deployment --to-revision=3
