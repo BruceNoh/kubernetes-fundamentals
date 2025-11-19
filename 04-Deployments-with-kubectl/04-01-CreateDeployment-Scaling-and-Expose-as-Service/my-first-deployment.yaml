@@ -13,7 +13,7 @@ spec:
         app: my-first-app
     spec:
       containers:
-        - name: my-first-container
-          image: stacksimplify/kubenginx:3.0.0
+        - name: kubenginx
+          image: stacksimplify/kubenginx:1.0.0
           ports:
             - containerPort: 80
