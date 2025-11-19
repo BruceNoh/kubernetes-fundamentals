@@ -102,6 +102,7 @@ kubectl run my-first-pod --image stacksimplify/kubenginx:1.0.0 --generator=run-p
 # Expose Pod as a Service
 # 클라우드 제공자는 "--type=LoadBalancer" 타입만 External-IP 서비스를 제공한다.
 # Node Port 서비스를 라우팅하기 위한 Port Range: Port Range 30000-32767
+# SVC를 반복적으로 생성/삭제 시 해당 포트범위를 보안그룹에서 허용해야 일일이 허용할 필요가 없어진다.
 kubectl expose pod <Pod-Name>  --type=NodePort --port=80 --name=<Service-Name>
 kubectl expose pod my-first-pod  --type=NodePort --port=80 --name=my-first-service
 
