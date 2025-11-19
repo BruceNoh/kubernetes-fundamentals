@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-first-deployment
+  annotations:
+    kubernetes.io/change-cause: "Update image to stacksimplify/kubenginx:4.0.0"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-first-app
+  template:
+    metadata:
+      labels:
+        app: my-first-app
+    spec:
+      containers:
+        - name: my-first-container
+          image: stacksimplify/kubenginx:4.0.0
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "250m"       # Min 0.25 cpu
+              memory: "256Mi"   # Min 256MB Memory 
+            limits:
+              cpu: "500m"       # Max 0.5 cpu
+              memory: "512Mi"   # Max 512MB Memory
