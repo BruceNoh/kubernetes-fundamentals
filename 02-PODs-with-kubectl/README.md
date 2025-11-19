@@ -100,7 +100,8 @@ kubectl run <desired-pod-name> --image <Container-Image> --generator=run-pod/v1
 kubectl run my-first-pod --image stacksimplify/kubenginx:1.0.0 --generator=run-pod/v1
 
 # Expose Pod as a Service
-# 클라우드 제공자는 "--type=LoadBalancer" 타입만 External-IP 서비스를 제공한다. 
+# 클라우드 제공자는 "--type=LoadBalancer" 타입만 External-IP 서비스를 제공한다.
+# Node Port 서비스를 라우팅하기 위한 Port Range: Port Range 30000-32767
 kubectl expose pod <Pod-Name>  --type=NodePort --port=80 --name=<Service-Name>
 kubectl expose pod my-first-pod  --type=NodePort --port=80 --name=my-first-service
 
