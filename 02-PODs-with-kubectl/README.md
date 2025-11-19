@@ -63,43 +63,7 @@ kubectl get pods -o wide
 kubectl get pods
 
 # Describe the Pod
-kubectl describe pod <Pod-Name>
-kubectl describe pod my-first-pod 
-```
-
-### Access Application
-- Currently we can access this application only inside worker nodes. 
-- To access it externally, we need to create a **NodePort Service**. 
-- **Services** is one very very important concept in Kubernetes. 
-
-
-### Delete Pod
-```
-# To get list of pod names
-kubectl get pods
-
-# Delete Pod
-kubectl delete pod <Pod-Name>
-kubectl delete pod my-first-pod
-```
-
-## Step-03: NodePort Service Introduction
-- What are Services in k8s?
-- What is a NodePort Service?
-- How it works?
-
-## Step-04: Demo - Expose Pod with a Service
-- Expose pod with a service (NodePort Service) to access the application externally (from internet)
-- **Ports**
-  - **port:** Port on which node port service listens in Kubernetes cluster internally
-  - **targetPort:** We define container port here on which our application is running.
-  - **NodePort:** Worker Node port on which we can access our application.
-```
-# Create  a Pod
-kubectl run <desired-pod-name> --image <Container-Image> --generator=run-pod/v1
-kubectl run my-first-pod --image stacksimplify/kubenginx:1.0.0 --generator=run-pod/v1
-
-# Expose Pod as a Service
+kubectl des다
 kubectl expose pod <Pod-Name>  --type=NodePort --port=80 --name=<Service-Name>
 kubectl expose pod my-first-pod  --type=NodePort --port=80 --name=my-first-service
 
