@@ -10,3 +10,12 @@ spec:
       port: 8080
       targetPort: 8080
   type: ClusterIP
+
+# https://github.com/BruceNoh/kubernetes-fundamentals/blob/master/00-Docker-Images/03-kube-frontend-nginx/V1-Release/default.conf
+# 위 nginx.conf 파일을 보면 nginx는 proxy_pass 대상으로 <Backend-ClusterIp-Service_Name>을 참조한다.
+# <Backend-ClusterIp-Service_Name>는 현재 "metadata.name: my-backend-service"를 참조하는 것으로 이해하면 된다.
+# location / {
+    # Update your backend application Kubernetes Cluster-IP Service name  and port below
+    # proxy_pass http://<Backend-ClusterIp-Service-Name>:<Port>;  
+    # proxy_pass http://my-backend-service:8080;
+    # }
